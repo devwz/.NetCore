@@ -1,9 +1,9 @@
-﻿using NetCore.Common.Infra.Domain;
+﻿using DefaultProject.Common.Domain;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace NetCore.Common.Infra.Interfaces
+namespace DefaultProject.Common.Data.Interfaces
 {
     public interface ICharacterDependency
     {

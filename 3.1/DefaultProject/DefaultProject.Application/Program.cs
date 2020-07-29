@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace NetCore.Common.Application
+namespace DefaultProject.Application
 {
     public class Program
     {

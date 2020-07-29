@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.902
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore.Common", "NetCore.Common\NetCore.Common.csproj", "{2EE5D232-5D9D-4F08-BA13-C2D6342A2426}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefaultProject.Common", "DefaultProject.Common\DefaultProject.Common.csproj", "{2EE5D232-5D9D-4F08-BA13-C2D6342A2426}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore.Common.Application", "NetCore.Common.Application\NetCore.Common.Application.csproj", "{CADC859E-7E36-4546-85F9-35CBCCAF5697}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefaultProject.Application", "DefaultProject.Application\DefaultProject.Application.csproj", "{CADC859E-7E36-4546-85F9-35CBCCAF5697}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

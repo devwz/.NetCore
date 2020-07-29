@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NetCore.Common.Application
+namespace DefaultProject.Application
 {
     public class App
     {
