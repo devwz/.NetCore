@@ -1,4 +1,5 @@
 ﻿using EntityFramework.Common.Data;
+using EntityFramework.Common.Data.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -10,18 +11,26 @@ namespace EntityFramework.App
         public static void Main(string[] args)
         {
             // Setup Dependency Injection
-            var provider = new ServiceCollection()
-                .AddDbContext<ApplicationDbContext>(options =>
-                {
-                    const string ConnectionString = "Server=(LocalDb)\\MSSqlLocalDb;Initial Catalog=EntityFrameworkCodeFirst;Integrated Security=True";
-                    options.UseSqlServer(ConnectionString);
-                })
-                .AddScoped<CharacterDependency>()
-                .AddSingleton<App>()
-                .BuildServiceProvider();
+            var services = new ServiceCollection();
+            ConfigureServices(services);
+
+            var provider = services.BuildServiceProvider();
 
             // Run Application
             provider.GetRequiredService<App>().Run();
+        }
+
+        static void ConfigureServices(IServiceCollection services)
+        {
+            services.AddDbContext<ApplicationDbContext>(options =>
+            {
+                const string connectionString = @"Server=(LocalDb)\MSSqlLocalDb;Initial Catalog=EntityFrameworkCodeFirst;Integrated Security=True";
+                options.UseSqlServer(connectionString);
+            });
+
+            services.AddScoped<ICharacterDependency, CharacterDependency>();
+
+            services.AddSingleton<App>();
         }
     }
 }

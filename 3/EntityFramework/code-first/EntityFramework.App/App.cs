@@ -1,4 +1,5 @@
 ﻿using EntityFramework.Common.Data;
+using EntityFramework.Common.Data.Interfaces;
 using EntityFramework.Common.Domain;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,10 @@ namespace EntityFramework.App
     {
         // Setup Dependency Injection
         private readonly ApplicationDbContext _context;
-        private readonly CharacterDependency _character;
+        private readonly ICharacterDependency _character;
 
         public App(ApplicationDbContext context,
-            CharacterDependency character)
+            ICharacterDependency character)
         {
             _context = context;
             _character = character;
