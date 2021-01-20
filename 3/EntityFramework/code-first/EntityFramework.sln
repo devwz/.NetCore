@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFramework.Common", "EntityFramework.Common\EntityFramework.Common.csproj", "{9DB040D0-B299-40A1-93F7-B5B404F14E16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFramework.Common", "EntityFramework.Common\EntityFramework.Common.csproj", "{9DB040D0-B299-40A1-93F7-B5B404F14E16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFramework.App", "EntityFramework.App\EntityFramework.App.csproj", "{CA23887D-6694-4B89-8EEF-4E9FF07A99DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFramework.App", "EntityFramework.App\EntityFramework.App.csproj", "{CA23887D-6694-4B89-8EEF-4E9FF07A99DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
