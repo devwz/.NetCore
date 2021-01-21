@@ -9,7 +9,14 @@ namespace DefaultProject.Common.Domain
         public int Id { get; set; }
         public string Title { get; set; }
         public int Health { get; set; }
-        public string Grade { get; set; }
+        public int Magic { get; set; }
+        public int Strength { get; set; }
+        public int Armor { get; set; }
+        public Kind Kind { get; set; }
         public string Bio { get; set; }
+
+        // public object[] Artefatos  { get; set; }
+        // public object[] Aparencia { get; set; }
+        // public object[] Atributos { get; set; }
     }
 }

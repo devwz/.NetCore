@@ -8,15 +8,22 @@ namespace DefaultProject.Common.Data
 {
     public class CharacterDependency : ICharacterDependency
     {
+        readonly IKindDependency _kind;
+
+        public CharacterDependency(IKindDependency kind)
+        {
+            _kind = kind;
+        }
+
         static Random random = new Random();
 
         public Character CreateCharacter()
         {
             return new Character()
             {
-                Title = GenerateTitle(),
-                Health = GenerateHealth(),
-                Grade = GenerateGrade()
+                Title = CreateTitle(),
+                Health = CreateHealth(),
+                Kind = CreateKind()
             };
         }
 
@@ -32,19 +39,19 @@ namespace DefaultProject.Common.Data
             return collection;
         }
 
-        static string GenerateTitle()
+        string CreateTitle()
         {
             string[] collection = new string[] { "Ariana", "Autumn", "Bartle", "Bohn", "Catherine", "Cloud", "Dalila", "Delta", "Diana", "Elit", "Emeline", "Finn", "Franklin", "Gorge", "Indigo", "Itham", "Libero", "Lillian", "Orion", "Ozotl", "Noel", "Rod", "Shel", "Stone", "Tiena", "Vivian", "Zagno" };
             return collection[random.Next(0, collection.Length)];
         }
 
-        static string GenerateGrade()
+        Kind CreateKind()
         {
-            string[] collection = new string[] { "Centaur", "Demon", "Elf", "Gnome", "God", "Golem", "Guardian", "Hunter", "Knight", "Nephilim", "Orc", "Robot", "Witch", "Wizard", "Zombie" };
-            return collection[random.Next(0, collection.Length)];
+            IList<Kind> col = (IList<Kind>)_kind.CreateTypeCollection();
+            return col[random.Next(0, col.Count)];
         }
 
-        static int GenerateHealth()
+        int CreateHealth()
         {
             return random.Next(60, 180);
         }
