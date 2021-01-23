@@ -15,6 +15,8 @@ namespace BackgroundWorker
     internal class ScopedService : IScopedService
     {
         private int _count = 0;
+
+        // Setup Dependency Injection
         private readonly ILogger<ScopedService> _logger;
 
         public ScopedService(ILogger<ScopedService> logger)
@@ -22,15 +24,16 @@ namespace BackgroundWorker
             _logger = logger;
         }
 
-        public async Task Run(CancellationToken sourceToken)
+        // Run Application
+        public async Task Run(CancellationToken stoppingToken)
         {
-            while (!sourceToken.IsCancellationRequested)
+            while (!stoppingToken.IsCancellationRequested)
             {
                 _count++;
 
-                _logger.LogInformation("ScopedWorker Count: {count}", _count);
+                _logger.LogInformation("ScopedService Count: {count}", _count);
 
-                await Task.Delay(4096, sourceToken);
+                await Task.Delay(4096, stoppingToken);
             }
         }
     }

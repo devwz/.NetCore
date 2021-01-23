@@ -9,19 +9,19 @@ using System.Threading.Tasks;
 
 namespace BackgroundWorker
 {
-    public class ScopedWorker : BackgroundService
+    public class BackgroundScopedWorker : BackgroundService
     {
-        private readonly ILogger<ScopedWorker> _logger;
+        private readonly ILogger<BackgroundScopedWorker> _logger;
 
-        public ScopedWorker(
+        public BackgroundScopedWorker(
             IServiceProvider services,
-            ILogger<ScopedWorker> logger)
+            ILogger<BackgroundScopedWorker> logger)
         {
             Services = services;
             _logger = logger;
         }
 
-        public IServiceProvider Services { get; set; }
+        public IServiceProvider Services { get; }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
