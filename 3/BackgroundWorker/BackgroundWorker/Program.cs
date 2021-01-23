@@ -9,25 +9,25 @@ namespace BackgroundWorker
 {
     public class Program
     {
+        /*
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
         }
+        */
 
-        // Queued
-        /*
         public static async Task Main(string[] args)
         {
-            using var host = CreateHostBuilder(args).Build();
+            using (IHost host = CreateHostBuilder(args).Build())
+            {
+                await host.StartAsync();
 
-            await host.StartAsync();
+                MonitorLoop monitor = host.Services.GetRequiredService<MonitorLoop>();
+                monitor.StartMonitorLoop();
 
-            var monitorLoop = host.Services.GetRequiredService<MonitorLoop>();
-            monitorLoop.StartMonitorLoop();
-
-            await host.WaitForShutdownAsync();
+                await host.WaitForShutdownAsync();
+            }
         }
-        */
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)

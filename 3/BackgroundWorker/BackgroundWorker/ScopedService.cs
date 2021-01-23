@@ -31,7 +31,7 @@ namespace BackgroundWorker
             {
                 _count++;
 
-                _logger.LogInformation("ScopedService Count: {count}", _count);
+                _logger.LogInformation("ScopedService count: {count}", _count);
 
                 await Task.Delay(4096, stoppingToken);
             }
